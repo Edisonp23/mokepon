@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mokepon</title>
+    <script src="./js/script.js"></script>
+</head>
+<body>
+    <h1>MOKEPON 🔥💧🌱</h1>
+<!--Sección para seleccionar mascotas-->
+    <section id="seleccionar-mascota">
+        <h2>Elige tu mascota: </h2>
+
+        <label for="hipodoge">Hipodoge</label>
+        <input type="radio" name="mascota" id="hipodoge">
+        <label for="capipepo">Capipepo</label>
+        <input type="radio" name="mascota" id="capipepo">
+        <label for="ratigueya">Ratigueya</label>
+        <input type="radio" name="mascota" id="ratigueya">
+        
+<!--Botón seleccionar mascotas-->
+        <button id="boton-mascota">seleccionar</button>
+    </section>
+<!--Sección para seleccionar ataque-->
+    <section id="seleccionar-ataque">
+        <h2>Elige tu ataque: </h2>
+
+        <p>Tu mascota <span id="mascota-jugador"></span> tiene <span>3</span> vidas</p>
+        <p>La mascota rival <span id="mascota-rival"></span> tiene <span>3</span> vidas</p>
+        <p>
+            <button id="boton-fuego">Fuego 🔥 </button>
+            <button id="boton-agua">Agua 💧 </button>
+            <button id="boton-tierra">Tierra 🌱 </button>
+        </p>
+    </section>
+<!--Sección para mensajes del juego-->
+    <section id="mensajes">
+        <p>Tu mascota atacó con FUEGO, la mascota del enemigo atacó con TIERRA - GANASTE 🎉🎉</p>
+    </section>
+
+    <section id="reiniciar">
+        <button id="boton-reiniciar">Jugar de nuevo</button>
+    </section>
+     
+    
+</body>
+</html>
