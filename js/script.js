@@ -24,6 +24,21 @@ function selecMascota(){
    } else {
     alert('Por favor selecciona una mascota.')
    } 
+    selecMascotaRival()
+}
+function selecMascotaRival(){
+    let ataqueAleatorio = aleatorio(1,3)
+    let spanMascotaRival = document.getElementById('mascota-rival')
+    if (ataqueAleatorio == 1){
+        spanMascotaRival.innerHTML = 'Hipodoge'
+    } else if (ataqueAleatorio == 2){
+        spanMascotaRival.innerHTML = 'Capipepo'
+    } else {
+        spanMascotaRival.innerHTML = 'Ratigueya'
+    }
+}
+function aleatorio(min,max){
+    return Math.floor(Math.random()*(max-min + 1) + min)
 }
 
 // carga el script junto con el HTML
