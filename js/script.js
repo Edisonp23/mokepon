@@ -50,17 +50,17 @@ function selecMascotaRival(){
 // ataques jugador
 function ataqueFuego() {
     ataqueJugador= 'FUEGO'
-    ataqueRival()
+    ataqueAleatorioRival()
 }
 
 function ataqueAgua() {
     ataqueJugador= 'AGUA'
-    ataqueRival()
+    ataqueAleatorioRival()
 }
 
 function ataqueTierra() {
     ataqueJugador= 'TIERRA'
-    ataqueRival()
+    ataqueAleatorioRival()
 }
 // ataque aleatorio rival
 function ataqueAleatorioRival(){
@@ -73,6 +73,16 @@ function ataqueAleatorioRival(){
     } else {
         ataqueRival = 'TIERRA'
     }
+
+    crearMensaje ()
+}
+//mensajes de ataque
+function crearMensaje() {
+    let sectionMensajes = document.getElementById('mensajes')
+
+    let parrafo = document.createElement ('p')
+    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + 'la mascota del enemigo atacó con' + ataqueRival + 'GANASTE 🎉🎉'
+    sectionMensajes.appendChild(parrafo)
 }
 
 function aleatorio(min,max){
