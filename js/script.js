@@ -5,6 +5,13 @@ let vidasRival = 3
 
 //inicia el juego seleccionando mascota
 function iniciarJuego(){
+// oculta sección de ataques    
+    let sectionSeleccionarataque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarataque.style.display = 'none'
+
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'none'
+
     let btnMascota = document.getElementById('boton-mascota')
     btnMascota.addEventListener('click',selecMascota)
 
@@ -20,6 +27,11 @@ function iniciarJuego(){
 }
 //función para seleccionar mascota
 function selecMascota(){
+    let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+    sectionSeleccionarMascota.style.display = 'none'
+// muestra la sección de ataque    
+    let sectionSeleccionarataque = document.getElementById('seleccionar-ataque')
+    sectionSeleccionarataque.style.display = 'block'
 
     let inputHipodoge = document.getElementById('hipodoge')
     let inputCapipepo = document.getElementById('capipepo')
@@ -119,7 +131,18 @@ function revisarVidas() {
 
 }
 // Muestra mensaje de resultado final
+
+//mensajes de ataque
+function crearMensaje(resultado) {
+    let sectionMensajes = document.getElementById('mensajes')
+
+    let parrafo = document.createElement ('p')
+    parrafo.innerHTML = 'Tu mascota atacó con ' + ''+ ataqueJugador + ' la mascota del enemigo atacó con ' + ataqueRival + ' - ' + resultado
+    sectionMensajes.appendChild(parrafo)
+}
+
 function crearMensajeFinal(resultadoFinal) {
+
     let sectionMensajes = document.getElementById('mensajes')
 
     let parrafo = document.createElement ('p')
@@ -132,15 +155,9 @@ function crearMensajeFinal(resultadoFinal) {
     btnAgua.disabled = true
     let btnTierra = document.getElementById('boton-tierra')
     btnTierra.disabled = true
-}
 
-//mensajes de ataque
-function crearMensaje(resultado) {
-    let sectionMensajes = document.getElementById('mensajes')
-
-    let parrafo = document.createElement ('p')
-    parrafo.innerHTML = 'Tu mascota atacó con ' + ''+ ataqueJugador + ' la mascota del enemigo atacó con ' + ataqueRival + ' - ' + resultado
-    sectionMensajes.appendChild(parrafo)
+    let sectionReiniciar = document.getElementById('reiniciar')
+    sectionReiniciar.style.display = 'block'
 }
 // aleatoriedad
 function aleatorio(min,max){
