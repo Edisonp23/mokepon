@@ -74,14 +74,29 @@ function ataqueAleatorioRival(){
         ataqueRival = 'TIERRA'
     }
 
-    crearMensaje ()
+    combate ()
+}
+
+// logica para combate y mensaje de resultado
+function combate () {
+    if (ataqueJugador == 'FUEGO' && ataqueRival == 'TIERRA') {
+        crearMensaje('GANASTE 🎉🎉')
+    } else if (ataqueJugador == 'AGUA' && ataqueRival == 'FUEGO') {
+        crearMensaje('GANASTE 🎉🎉')
+    } else if (ataqueJugador == 'TIERRA' && ataqueRival == 'AGUA') {
+        crearMensaje('GANASTE 🎉🎉')
+    } else if (ataqueJugador == ataqueRival) {
+        crearMensaje('EMPATE 😒😒')
+    } else {
+        crearMensaje('PERDISTE 😔😔')
+    }
 }
 //mensajes de ataque
-function crearMensaje() {
+function crearMensaje(resultado) {
     let sectionMensajes = document.getElementById('mensajes')
 
     let parrafo = document.createElement ('p')
-    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + 'la mascota del enemigo atacó con' + ataqueRival + 'GANASTE 🎉🎉'
+    parrafo.innerHTML = 'Tu mascota atacó con ' + ''+ ataqueJugador + ' la mascota del enemigo atacó con ' + ataqueRival + ' - ' + resultado
     sectionMensajes.appendChild(parrafo)
 }
 
@@ -90,4 +105,4 @@ function aleatorio(min,max){
 }
 
 // carga el script junto con el HTML
-window.addEventListener('load', iniciarJuego) 
+window.addEventListener('load', iniciarJuego)  
